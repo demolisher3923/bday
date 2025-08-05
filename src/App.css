@@ -1,0 +1,254 @@
+/* src/App.css */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Quicksand:wght@400;600&display=swap');
+
+/* Reset and Global Styles */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.App {
+  text-align: center;
+}
+
+/* FIX: This is the main container style that centers everything */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fredoka', cursive;
+  font-weight: 500;
+}
+
+/* --- Button Styles --- */
+.magic-button {
+  background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.magic-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* NEW: Style for secondary/back buttons */
+.magic-button.secondary {
+    background-image: linear-gradient(to right, #888, #666);
+}
+
+/* --- Birthday Card Styles --- */
+.card-container {
+  padding: 2rem;
+}
+
+.birthday-card {
+  width: 100%;
+  max-width: 850px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.421);
+  animation: fadeInUp 1s ease;
+  overflow: hidden; /* Keep overlay contained */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-overlay {
+  background-color: rgba(0, 0, 0, 0.49); /* Darker overlay for better readability */
+  padding: 2rem 3rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  line-height: 1.8;
+}
+
+.card-overlay p {
+  font-size: 1.13rem;
+}
+
+.stickers {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.stickers img {
+  width: 95px;
+  height: 95px;
+  animation: bounce 2.5s infinite;
+}
+
+.card-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* --- Game Styles --- */
+.game-container {
+  gap: 1rem;
+}
+
+.game-area {
+  background: linear-gradient(to bottom, #87CEEB, #E0F7FA); /* Sky gradient */
+  border: 5px solid #ff4b2b;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  cursor: none; /* Hide cursor over game area */
+  max-width: 90vw;
+}
+
+.catcher {
+  font-size: 40px;
+  position: absolute;
+  bottom: 5px;
+  height: 20px;
+  user-select: none;
+  z-index: 10;
+}
+
+.item {
+  font-size: 30px;
+  position: absolute;
+  user-select: none;
+  z-index: 5;
+}
+
+.game-info {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.game-instructions {
+  margin-top: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-over-buttons {
+    display: flex;
+    margin-top: 15px;
+}
+
+/* --- Animations --- */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-20px);}
+  60% {transform: translateY(-10px);}
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .card-overlay {
+    padding: 1.5rem 2rem;
+  }
+  .magic-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .stickers img {
+    width: 60px;
+    height: 60px;
+  }
+  .game-info {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  .card-overlay {
+    padding: 1rem 1.5rem;
+  }
+  .magic-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  .stickers img {
+    width: 50px;
+    height: 50px;
+  }
+  .catcher {
+    font-size: 30px;
+  }
+  .item {
+    font-size: 24px;
+  }
+  .birthday-card {
+    max-width: 95vw;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-overlay {
+    padding: 1rem 1.25rem;
+  }
+
+  .card-overlay p {
+    font-size: 1rem;
+  }
+
+  }
+  
