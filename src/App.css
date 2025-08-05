@@ -218,23 +218,7 @@ h1, h2, h3, h4 {
   .container {
     padding: 1rem;
   }
-  .card-overlay {
-    padding: 1rem 1.5rem;
-  }
-  .magic-button {
-    padding: 10px 20px;
-    font-size: 12px;
-  }
-  .stickers img {
-    width: 50px;
-    height: 50px;
-  }
-  .catcher {
-    font-size: 30px;
-  }
-  .item {
-    font-size: 24px;
-  }
+
   .birthday-card {
     max-width: 95vw;
     border-radius: 15px;
@@ -244,11 +228,29 @@ h1, h2, h3, h4 {
 
   .card-overlay {
     padding: 1rem 1.25rem;
+    text-align: center; /* ✅ fixed to center */
   }
 
   .card-overlay p {
     font-size: 1rem;
   }
 
+  .magic-button {
+    padding: 10px 20px;
+    font-size: 12px;
   }
-  
+
+  .stickers img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .catcher {
+    font-size: 30px;
+  }
+
+  .item {
+    font-size: 24px;
+  }
+}
+
